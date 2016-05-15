@@ -1,0 +1,29 @@
+{% extends 'AppBundle:default:index.html.twig' %}
+
+{% block body %}
+	<br>
+	{% if message %}
+    	<div class="alert alert-success">{{ message }}</div>
+    {% endif %}
+	<div role="toolbar">
+		<a href="{{ path('_tasks_add') }}" class="btn btn-default">Add</a>
+	</div>
+	<br>
+    <div class="list-group">
+    	{% for task in tasks %}
+	        <div class="list-group-item">
+	        	<h4 class="list-group-item-heading">Task Id: {{ task.taskid }}</h4>
+	        	<p class="list-group-item-text">
+	        		Description: {{ task.description }}
+	        	</p>
+	        	<br>
+	        	<p class="list-group-item-text">
+	        		<a href="{{ path('_tasks_edit', {'id': task.taskid}) }}">Edit</a>
+	        		<a class="text-danger" href="{{ path('_tasks_delete', {'id': task.taskid}) }}">Delete</a>
+	        	</p>
+	        </div>
+	    {% else %}
+	        <div class="list-group-item">No tasks found</div>
+	    {% endfor %}
+    </div>
+{% endblock %}

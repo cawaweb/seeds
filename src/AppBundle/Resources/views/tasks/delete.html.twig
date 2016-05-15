@@ -1,0 +1,18 @@
+{% extends 'AppBundle:default:index.html.twig' %}
+
+{% block body %}
+	<br>
+	<h1>Are you sure you want to delete?</h1>
+	Task ID: {{ task.taskId }}
+	<br>
+	Description: {{ task.description }}
+	<br>
+	<div class="form-group">
+		{{ form_start(form) }}
+		<div class="form-control-static">
+			<a class="btn btn-default" href="{{ path('_home') }}">Cancel</a>
+			{{ form_widget(form.delete) }}
+		</div>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}

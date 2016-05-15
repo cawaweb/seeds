@@ -1,0 +1,34 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block menu %}
+
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-options" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="{{ path('_home') }}" class="navbar-brand">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-options">
+        <ul class="nav navbar-nav">
+            {% if app.request.pathInfo == path('_lots') %}
+                <li class="active"><a href="{{ path('_lots') }}">Lots<span class="sr-only">(current)</span></a></li>
+            {% else %}
+                <li><a href="{{ path('_lots') }}">Lots</a></li>
+            {% endif %}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        	<li class="btn-default navbar-btn-xs"><a href="{{ path('_logout') }}">Logout</a></li>
+        </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}

@@ -1,0 +1,41 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+_home:
+    path:      /
+    defaults:  { _controller: AppBundle:Tasks:index }
+
+_login:
+    path:      /login
+    defaults:  { _controller: AppBundle:Security:login }
+
+_login_check:
+    path:      /login_check
+
+_logout:
+    path:      /logout
+
+_tasks:
+    path:      /tasks
+    defaults:  { _controller: AppBundle:Tasks:index }
+
+_tasks_add:
+    path:      /tasks/add
+    defaults:  { _controller: AppBundle:Tasks:add }
+
+_tasks_edit:
+    path:      /tasks/edit/{id}
+    defaults:  { _controller: AppBundle:Tasks:edit, id: null }
+    requirements:
+        page:  \d+
+
+_tasks_delete:
+    path:      /tasks/delete/{id}
+    defaults:  { _controller: AppBundle:Tasks:delete, id: null }
+    requirements:
+        page:  \d+
+
+_lots:
+    path:      /lots
+    defaults:  { _controller: AppBundle:Lots:index }

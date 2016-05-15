@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets '@AppBundle/Resources/public/bootstrap/css/bootstrap.min.css'%}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block menu %}{% endblock %}
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}
+            {% javascripts '@AppBundle/Resources/public/jquery/jquery-2.1.4.min.js' %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            {% javascripts '@AppBundle/Resources/public/bootstrap/js/bootstrap.min.js' %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>
+
