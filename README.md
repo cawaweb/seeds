@@ -1,9 +1,9 @@
-= Seeds =
+# Seeds 
 =======
 
 An example project.
 
-== Technologies ==
+## Technologies
 
-Symfony PHP Framework
-MariaDB
+* [Symfony PHP Framework](http://symfony.com/what-is-symfony)
+* [MariaDB](https://mariadb.org/about/)
