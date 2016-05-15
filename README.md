@@ -1,4 +1,4 @@
-# Seeds 
+Seeds 
 =======
 
 An example project.
